@@ -1,0 +1,21 @@
+header {
+    background-color: #6941C6;
+    color: snow;
+
+    .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .styled {
+            font-size: 2.5rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            gap: 3rem;
+        }
+   }
+}
+

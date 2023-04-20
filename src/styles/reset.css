@@ -46,7 +46,7 @@
     padding-left: 50px;
     padding-right: 50px;
     /* apridboti tik maximalu ploti */
-    max-width: 80rem;
+    max-width: 120rem;
     /* skaiciuoti parastes automatiskai vienodai is kaires ir is desines */
     margin: 0 auto;
   }
