@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 const DivS = styled.div`
-  height: 90vh;
+  height: 89vh;
 `;
 
 function LoginPage() {

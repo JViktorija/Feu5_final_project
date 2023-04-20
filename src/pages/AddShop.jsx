@@ -5,13 +5,13 @@ const DivS = styled.div`
   height: 89vh;
 `;
 
-function RegisterPage() {
+function AddShop() {
   return (
     <DivS className="container">
-      <h1>RegisterPage</h1>
-      <p>This is RegisterPage</p>
+      <h1>AddShop</h1>
+      <p>This is AddShop</p>
     </DivS>
   )
 }
 
-export default RegisterPage;
+export default AddShop;

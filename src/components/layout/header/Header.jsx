@@ -9,9 +9,9 @@ function Header() {
         <div className='container'>
             <Link to={'/'} className='styled'>Logo</Link>
             <nav>
-                <NavLink to={'/'} className='styled'>Home page</NavLink>
-                <NavLink to={'/register'} className='styled'>Register</NavLink>
-                <NavLink to={'/login'} className='styled'>Login</NavLink>
+                <NavLink to={'/'} className='styled hover'>Home page</NavLink>
+                <NavLink to={'/register'} className='styled hover'>Register</NavLink>
+                <NavLink to={'/login'} className='styled hover'>Login</NavLink>
             </nav>
         </div>
     </header>
