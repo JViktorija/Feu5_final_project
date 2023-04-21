@@ -12,11 +12,11 @@ function Header() {
         <div className='container'>
             <Link to={'/'} className='styled'>Logo</Link>
             <nav>
-                <NavLink to={'/'} className='styled hover'>Home page</NavLink>
                 {isLoggedIn && ( <>
+                <NavLink to={'/'} className='styled hover'>Home page</NavLink>
                   <NavLink to={'/shops'} className='styled hover'>Shops</NavLink>
                   <NavLink to={'/add'} className='styled hover'>Add Shops</NavLink>
-                  <Logout />
+                  <Logout className='styled hover'/>
                   </>
                 )}
                 {!isLoggedIn && ( <>

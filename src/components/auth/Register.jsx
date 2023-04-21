@@ -10,7 +10,7 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
 });
 
- const ValidationSchema = ({ onRegister }) => (
+ const Register = ({ onRegister }) => (
     <div>
       {/* <h1>Signup</h1> */}
       <Formik
@@ -22,14 +22,19 @@ const SignupSchema = Yup.object().shape({
         onSubmit={values => {
           // same shape as initial values
           onRegister(values);
-          console.log(values);
+          console.log('SUBMIT', values);
+        }}
+        validateOnChange
+        validateOnBlur
+        validate={(...args) => {
+          console.log(args);
         }}
       >
         {({ errors, touched }) => (
           <Form>
             <Label htmlFor="email">Email</Label>
             <Field name="email" type="email" component={Input} />
-            {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            {errors.email && touched.email ? <div>{errors.email} </div> : null}
             {/* <button type="submit">Submit</button> */}
             <Label htmlFor="password">Password</Label>
             <Field name="password" type="password" component={Input} />
@@ -41,4 +46,4 @@ const SignupSchema = Yup.object().shape({
     </div>
   );
 
-  export default ValidationSchema;
+  export default Register;

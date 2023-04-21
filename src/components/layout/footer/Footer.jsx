@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <div className='container'>
-        <h1>Visos teises saugomos 2023 ©</h1>
+        <h1>All rights reserved 2023 ©</h1>
       </div>
     </footer>
   )

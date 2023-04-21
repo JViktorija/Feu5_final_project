@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper  = styled.div`
@@ -39,7 +40,7 @@ export const Label = styled.label`
   display: block;
 `;
 
-export const Input = styled.input`
+export const Input = styled(({ field, ...props }) => <input {...field} {...props} /> )`
     font-size: 2rem;
     padding: 0.5em 0.5em;
     border-radius: 5px;
