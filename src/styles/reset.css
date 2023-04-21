@@ -5,7 +5,7 @@
   html {
     /* 1 rem = 10px */
     font-size: 62.5%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
   }
   
   p,
@@ -52,19 +52,6 @@
   }
   
   /* utility classes */
-  
-  .flex {
-    display: flex;
-  }
-  
-  .between {
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .tac {
-    text-align: center;
-  }
   
   input,
   textarea,
