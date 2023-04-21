@@ -1,40 +1,59 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Register from '../components/auth/Register';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import styled from 'styled-components';
+import { auth } from '../firebase/firebase';
+// import Register from '../components/auth/Register';
+import ValidationSchema from '../components/auth/Register';
+import { toast } from 'react-toastify';
+import { Button, DivCont } from "../components/ui/styled/Styles";
 
-const DivS = styled.div`
+const Wrapper  = styled.div`
+ display: flex;
   height: 89vh;
-  padding-top: 5rem;
+  background: linear-gradient(to bottom, #e66465, blue, #9198e5);
+`;
+const H1 = styled.h1`
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+`;
+const H2 = styled.h2`
+  margin-top: 15rem;
+  margin-bottom: 0;
 `;
 
 function RegisterPage() {
-  const auth = getAuth();
+
   const registerFireBase = async ({ email, password }) => {
     console.log('{ email, password } ===', { email, password });
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         console.log('user ===', user);
+        toast.success('Jegele prisijungei')
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.warn('errorMessage ===', errorMessage);
+      toast.error('Soriukas no go this time')
     }
   }
   
   return (
-    <DivS className="container">
-      <h1>Register </h1>
-      <p>Are you a new user? No problem, register here:</p>
-      <Register onRegister={registerFireBase}/>
+    <Wrapper>
+      <DivCont className="container">
+        <H1>Sign Up </H1>
+        {/* <p>Are you a new user? No problem, register here:</p> */}
+        {/* <Register onRegister={registerFireBase}/> */}
+        <ValidationSchema onRegister={registerFireBase}/>
 
-      <h2>Already an user?</h2>
-      <Link to={'/login'}>
-        <button>Login</button>
-      </Link>
-    </DivS>
+        <H2>Already an user?</H2>
+        <Link to={'/login'}>
+          <Button>Login</Button>
+        </Link>
+      </DivCont>
+    </Wrapper>
   )
 }
 

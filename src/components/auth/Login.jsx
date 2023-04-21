@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { Button, Input, Label } from '../ui/styled/Styles';
 
 function Login({ onLogin }) {
     const formik = useFormik({
@@ -16,8 +17,8 @@ function Login({ onLogin }) {
     return (
       <form onSubmit={formik.handleSubmit}>
         <div>
-          <label htmlFor="email">Email</label>
-          <input
+          <Label htmlFor="email">Email</Label>
+          <Input
             id="email"
             type="text"
             name="email"
@@ -30,8 +31,8 @@ function Login({ onLogin }) {
           ) : null}
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <input
+          <Label htmlFor="password">Password</Label>
+          <Input
             id="password"
             type="password"
             name="password"
@@ -43,7 +44,7 @@ function Login({ onLogin }) {
             <div>{formik.errors.password}</div>
           ) : null}
         </div>
-        <button type="submit">Submit</button>
+        <Button type="submit">Login</Button>
       </form>
     );
   }

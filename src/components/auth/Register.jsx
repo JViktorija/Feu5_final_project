@@ -1,59 +1,44 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import { Button, Label, Input } from '../ui/styled/Styles';
 
-function Register({ onRegister }) {
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-      repeatPassword: '',
-    },
-    onSubmit: (values) => {
-      console.log('Form values:', values);
-      // jei sutampa slaptazodziai
-      const { password, repeatPassword } = formik.values;
-      if (password === repeatPassword) {
-        onRegister({
-          email: values.email,
-          password,
-        });
-      }
-    },
-  });
+const SignupSchema = Yup.object().shape({
+  password: Yup.string()
+    .min(6, 'Too Short!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+});
 
-  return (
-    <form onSubmit={formik.handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="text"
-          name="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
-        ) : null}
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          name="password"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div>{formik.errors.password}</div>
-        ) : null}
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+ const ValidationSchema = ({ onRegister }) => (
+    <div>
+      {/* <h1>Signup</h1> */}
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        validationSchema={SignupSchema}
+        onSubmit={values => {
+          // same shape as initial values
+          onRegister(values);
+          console.log(values);
+        }}
+      >
+        {({ errors, touched }) => (
+          <Form>
+            <Label htmlFor="email">Email</Label>
+            <Field name="email" type="email" component={Input} />
+            {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            {/* <button type="submit">Submit</button> */}
+            <Label htmlFor="password">Password</Label>
+            <Field name="password" type="password" component={Input} />
+            {errors.password && touched.password ? <div>{errors.password}</div> : null}
+            <Button type="submit">Register</Button>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
-}
 
-export default Register;
+  export default ValidationSchema;
