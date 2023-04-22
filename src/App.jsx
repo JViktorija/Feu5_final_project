@@ -7,8 +7,8 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import Footer from './components/layout/footer/Footer';
 import RegisterPage from './pages/RegisterPage';
-import Shops from './pages/Shops';
-import AddShops from './pages/AddShops';
+import Shops from './pages/ShopsPage';
+import AddShops from './pages/AddShopsPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

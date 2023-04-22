@@ -23,11 +23,11 @@ const H2 = styled.h2`
   margin-top: 15rem;
   margin-bottom: 0;
 `;
-const H2LoggedIn = styled.h2`
-  font-size: 3rem;
-  padding-top: 100%;
-  color: #333;
-`
+// const H2LoggedIn = styled.h2`
+//   font-size: 3rem;
+//   padding-top: 100%;
+//   color: #333;
+// `
 
 function LoginPage() {
   const { isLoggedIn, user } = useAuthCtx();

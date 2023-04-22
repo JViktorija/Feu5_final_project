@@ -31,12 +31,12 @@ function RegisterPage() {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         console.log('user ===', user);
-        toast.success('Jegele prisijungei')
+        toast.success('Successful login')
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.warn('errorMessage ===', errorMessage);
-      toast.error('Soriukas no go this time')
+      toast.error('Try again')
     }
   }
   
