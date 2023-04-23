@@ -1,28 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { Input } from '../ui/styled/Styles';
+import { Button, Input } from '../ui/styled/Styles';
 import styled from 'styled-components';
 
 const H1 = styled.h1`
   margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
+  color: #333;
 `;
 
 const H3 = styled.h3`
-    margin-bottom: 0.1rem;
+  margin-bottom: 0.1rem;
 `
-export const Button = styled.button`
-  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-  color: white;
-  font-size: 20px;
-  padding: 10px 60px;
-  border-radius: 5px;
-  margin: 20px 0px;
-  cursor: pointer;
-  width: 10em;
-`;
 
 const AddShopSceme = Yup.object().shape({
   shopName: Yup.string()
@@ -43,22 +34,34 @@ const AddShopSceme = Yup.object().shape({
     .required('Required'),
 });
 
-export const AddShop = ({onAddShop}) => (
+const initialValues = {
+  shopName: '',
+  town: '',
+  startYear: '',
+  description: '',
+  ImageUrl: ''
+};
+
+export const AddShop = ({onAddShop}) => {
+  const [isAdding, setIsAdding] = useState(false);
+  
+  const handleSubmit = async (values, { resetForm }) => {
+    setIsAdding(true);
+    try {
+      await onAddShop(values);
+      resetForm(initialValues);
+    } finally {
+      setIsAdding(false);
+    }
+  }
+
+  return (
   <div>
     <H1>Add Shop</H1>
     <Formik
-      initialValues={{
-        shopName: '',
-        town: '',
-        startYear: '',
-        description: '',
-        ImageUrl: ''
-      }}
+      initialValues={initialValues}
       validationSchema={AddShopSceme}
-      onSubmit={values => {
-        // same shape as initial values
-        onAddShop(values);
-      }}
+      onSubmit={handleSubmit}
     >
       {({ errors, touched }) => (
         <Form>
@@ -93,9 +96,9 @@ export const AddShop = ({onAddShop}) => (
             <div>{errors.ImageUrl}</div>
           ) : null}
           
-          <Button type="submit">Add Shop</Button>
+          <Button type="submit" disabled={isAdding} >Add Shop</Button>
         </Form>
       )}
     </Formik>
   </div>
-);
+)};

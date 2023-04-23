@@ -4,7 +4,7 @@ import { addDoc, collection } from '@firebase/firestore';
 import { AddShop } from '../components/shop/AddShop';
 import { DivCont } from '../components/ui/styled/Styles';
 import { db } from '../firebase/firebase';
-// import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 const Wrapper  = styled.div`
   display: flex;
@@ -14,23 +14,19 @@ const Wrapper  = styled.div`
 
 function AddShopPage() {
 
-  // function AddNewShop(shopObj) {
-  //   const hookPostRef = collection(db, 'hookPosts');
-  //   addDoc(hookPostRef, shopObj).then(() => {
-  //     toast.success('shop created');
-  //   });
+  const addShopData = async (value) => {
+    try {
+      const docRef = await addDoc(collection(db, "shops"), value);
+      toast.success('Sccessful login')
+    } catch (e) {
+      toast.error('Sucful login')
+    }
+  }
 
     return (
       <Wrapper>
       <DivCont className="container">
-        <AddShop onAddShop={async (value) => {
-          try {
-            const docRef = await addDoc(collection(db, "shops"), value);
-            console.log("Document written with ID: ", docRef.id);
-          } catch (e) {
-            console.error("Error adding document: ", e);
-          }
-        }}/>
+        <AddShop onAddShop={addShopData}/>
       </DivCont>
       </Wrapper>
     )
