@@ -16,10 +16,12 @@ const H1 = styled.h1`
   margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
+  color: #333;
 `;
 const H2 = styled.h2`
   margin-top: 15rem;
   margin-bottom: 0;
+  color: #333;
 `;
 
 function RegisterPage() {

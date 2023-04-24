@@ -18,15 +18,20 @@ const Card = styled.ul`
   max-width: 40rem;
 `;
 
-function SingleShop({ shop, key }) {
+const Image = styled.img`
+  width: 200px;
+  height: 200px;
+`
+
+function SingleShop({ shop }) {
   return (
-    <Card key={key}>
+    <Card>
       <LI>{shop.shopName}</LI>
       <LI>{shop.town}</LI>
       <LI>{shop.startYear}</LI>
       <LI>{shop.description}</LI>
       <LI>
-        <img src={shop.ImageUrl} alt={shop.shopName} />
+        <Image src={shop.ImageUrl} alt={shop.shopName} />
       </LI>
     </Card>
   );
