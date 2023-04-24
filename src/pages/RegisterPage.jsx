@@ -31,7 +31,7 @@ function RegisterPage() {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         console.log('user ===', user);
-        toast.success('Successful login')
+        toast.success('Sign up successfull')
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

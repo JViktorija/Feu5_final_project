@@ -11,10 +11,11 @@ const LI = styled.li`
 const Card = styled.ul`
   padding: 1rem;
   box-shadow: 5px 5px 10px rgb(180, 190, 194);
-  border: 1px solid rgb(191, 180, 180);
+  border: 1px solid #9E77ED;
   border-radius: 5px;
   background-color: #F4EBFF;
-  max-width: 20rem;
+  min-width: 20rem;
+  max-width: 40rem;
 `;
 
 function SingleShop({ shop, key }) {

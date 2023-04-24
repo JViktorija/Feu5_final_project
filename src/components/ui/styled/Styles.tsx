@@ -30,6 +30,7 @@ export const Button = styled.button`
   margin: 10px 0px;
   cursor: pointer;
   width: 10em;
+  border: 1px #333 solid;
 `;
 
 export const Label = styled.label`
@@ -44,7 +45,7 @@ export const Input = styled(({ field, ...props }) => <input {...field} {...props
     font-size: 2rem;
     padding: 0.5em 0.5em;
     border-radius: 5px;
-    border: 1px solid #777;
+    border: 1px solid #333;
     display: block;
     max-width: 300px;
 `;

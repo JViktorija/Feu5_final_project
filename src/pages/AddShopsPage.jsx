@@ -17,9 +17,9 @@ function AddShopPage() {
   const addShopData = async (value) => {
     try {
       const docRef = await addDoc(collection(db, "shops"), value);
-      toast.success('Sccessful login')
+      toast.success('Shop added successfully')
     } catch (e) {
-      toast.error('Sucful login')
+      toast.error('Error')
     }
   }
 

@@ -13,6 +13,7 @@ const H1 = styled.h1`
 
 const H3 = styled.h3`
   margin-bottom: 0.1rem;
+  color: #333;
 `
 
 const AddShopSceme = Yup.object().shape({
