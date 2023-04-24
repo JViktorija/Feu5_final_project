@@ -1,31 +1,30 @@
 header {
-    background-color: #9E77ED;
-    color: snow;
+  background-color: #9e77ed;
+  color: snow;
 
-    .container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .styled {
-            font-size: 2rem;
-        }
-        nav {
-            display: flex;
-            justify-content: space-around;
-            gap: 3rem;
-            .hover {
-                padding: 1rem;
-            }
-            :hover{
-                background-color:#6941C6;
-            }
-            .active{
-                background-color:#6941C6;
-            }
-        }
-   }
+    .styled {
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      gap: 3rem;
+      .hover {
+        padding: 1rem;
+      }
+      :hover {
+        background-color: #6941c6;
+      }
+      .active {
+        background-color: #6941c6;
+      }
+    }
+  }
 }
-

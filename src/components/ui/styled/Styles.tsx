@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper  = styled.div`
+const Wrapper = styled.div`
   display: flex;
   height: 89vh;
   background: linear-gradient(to bottom, #e66465, blue, #9198e5);
-`
+`;
 
 export const DivCont = styled.div`
   border-radius: 25px;
@@ -22,7 +22,21 @@ export const DivCont = styled.div`
 `;
 
 export const Button = styled.button`
-  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
   color: white;
   font-size: 20px;
   padding: 10px 30px;
@@ -41,11 +55,13 @@ export const Label = styled.label`
   display: block;
 `;
 
-export const Input = styled(({ field, ...props }) => <input {...field} {...props} /> )`
-    font-size: 2rem;
-    padding: 0.5em 0.5em;
-    border-radius: 5px;
-    border: 1px solid #333;
-    display: block;
-    max-width: 300px;
+export const Input = styled(({ field, ...props }) => (
+  <input {...field} {...props} />
+))`
+  font-size: 2rem;
+  padding: 0.5em 0.5em;
+  border-radius: 5px;
+  border: 1px solid #333;
+  display: block;
+  max-width: 300px;
 `;

@@ -2,11 +2,10 @@ import { useSignOut } from 'react-firebase-hooks/auth';
 import { useAuthCtx } from '../store/AuthProvider';
 import { auth } from '../../firebase/firebase';
 import styled from 'styled-components';
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from 'react-router-dom';
 
 const Button = styled.button`
-  background-color: #9E77ED;
+  background-color: #9e77ed;
   color: snow;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -28,11 +27,7 @@ function Logout() {
     }
   }
 
-  return !isLoggedIn ? null : (
-    <Button onClick={logoutFire}>
-      Logout
-    </Button>
-  );
+  return !isLoggedIn ? null : <Button onClick={logoutFire}>Logout</Button>;
 }
 
 export default Logout;

@@ -11,7 +11,10 @@ function Clock({ format = 'HH:mm:ss' }) {
     return () => clearInterval(intervalID);
   }, []);
 
-  const formattedTime = time.toLocaleTimeString([], { timeStyle: 'medium', hour12: false });
+  const formattedTime = time.toLocaleTimeString([], {
+    timeStyle: 'medium',
+    hour12: false,
+  });
 
   return (
     <div>

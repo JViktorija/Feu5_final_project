@@ -14,14 +14,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className=''>
+    <div className="">
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/register' element={<RegisterPage />} />
-        <Route path='/shops' element={<Shops />} />
-        <Route path='/add' element={<AddShops />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/shops" element={<Shops />} />
+        <Route path="/add" element={<AddShops />} />
       </Routes>
       <Footer />
       <ToastContainer />
