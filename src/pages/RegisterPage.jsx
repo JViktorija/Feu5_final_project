@@ -27,12 +27,11 @@ const H2 = styled.h2`
 function RegisterPage() {
   const registerFireBase = async ({ email, password }) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(
+       await createUserWithEmailAndPassword(
         auth,
         email,
         password,
       );
-      // const user = userCredential.user;
       toast.success('Sign up successful');
     } catch (error) {
       toast.error('Please try again');

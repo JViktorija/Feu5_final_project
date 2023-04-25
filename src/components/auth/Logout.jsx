@@ -15,7 +15,7 @@ const Button = styled.button`
 
 function Logout() {
   const { isLoggedIn } = useAuthCtx();
-  const [signOut, loading, error] = useSignOut(auth);
+  const [signOut] = useSignOut(auth);
   const navigate = useNavigate();
 
   async function logoutFire() {
