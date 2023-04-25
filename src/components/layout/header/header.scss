@@ -11,13 +11,14 @@ header {
 
     .styled {
       font-size: 2rem;
+      border-radius: 20px;
     }
     nav {
       display: flex;
       justify-content: space-around;
       gap: 3rem;
       .hover {
-        padding: 1rem;
+        padding: 1rem 2rem;
       }
       :hover {
         background-color: #6941c6;
