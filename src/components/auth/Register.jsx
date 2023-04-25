@@ -21,7 +21,7 @@ const Register = ({ onRegister }) => (
       }}
       validateOnChange
       validateOnBlur
-      validate={(...args) => {}}
+      // validate={(...args) => {}}
     >
       {({ errors, touched }) => (
         <Form>

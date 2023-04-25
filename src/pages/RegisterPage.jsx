@@ -32,13 +32,10 @@ function RegisterPage() {
         email,
         password,
       );
-      const user = userCredential.user;
-      toast.success('Sign up successfull');
+      // const user = userCredential.user;
+      toast.success('Sign up successful');
     } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // console.warn('errorMessage ===', errorMessage);
-      toast.error('Try again');
+      toast.error('Please try again');
     }
   };
 

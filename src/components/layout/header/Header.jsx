@@ -11,7 +11,7 @@ function Header() {
     <header>
       <div className="container">
         <Link to={'/'} className="styled">
-          Logo
+        <i class="fa fa-2x fa-cart-plus" aria-hidden="true"> SHOPPO</i>
         </Link>
         <nav>
           {isLoggedIn && (
