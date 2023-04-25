@@ -11,7 +11,7 @@ function Header() {
     <header>
       <div className="container">
         <Link to={'/'} className="styled">
-        <i class="fa fa-2x fa-cart-plus" aria-hidden="true"> SHOPPO</i>
+        <i className="fa fa-2x fa-cart-plus" aria-hidden="true"> SHOPPO</i>
         </Link>
         <nav>
           {isLoggedIn && (
