@@ -1,6 +1,12 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { Button, Input, Label } from '../ui/styled/Styles';
+import styled from 'styled-components';
+
+const P = styled.p`
+  color: red;
+  margin-bottom: 0;
+`
 
 function Login({ onLogin }) {
   const formik = useFormik({
@@ -15,11 +21,11 @@ function Login({ onLogin }) {
       const errors = {};
 
       if (!values.email) {
-        errors.email = 'Required';
+        errors.email = <P>Required</P>;
       }
 
       if (!values.password) {
-        errors.password = 'Required';
+        errors.password = <P>Required</P>;
       }
 
       return errors;
@@ -39,7 +45,7 @@ function Login({ onLogin }) {
           value={formik.values.email}
         />
         {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
+          <P>{formik.errors.email}</P>
         ) : null}
       </div>
       <div>

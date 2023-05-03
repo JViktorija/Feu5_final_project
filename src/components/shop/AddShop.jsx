@@ -4,6 +4,11 @@ import * as Yup from 'yup';
 import { Button, Input } from '../ui/styled/Styles';
 import styled from 'styled-components';
 
+const P = styled.p`
+  color: red;
+  margin-bottom: 0;
+`
+
 const H1 = styled.h1`
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -17,14 +22,14 @@ const H3 = styled.h3`
 `;
 
 const AddShopSceme = Yup.object().shape({
-  shopName: Yup.string().min(4, 'At least 4 symbols').max(50, 'Maximum 50 symbols').required('Required'),
-  town: Yup.string().min(2, 'At least 4 symbols').max(50, 'Maximum 50 symbols').required('Required'),
+  shopName: Yup.string().min(4, <P>At least 4 symbols</P>).max(50, <P>Maximum 50 symbols</P>).required(<P>Required</P>),
+  town: Yup.string().min(2, <P>At least 4 symbols</P>).max(50, <P>Maximum 50 symbols</P>).required(<P>Required</P>),
   startYear: Yup.number()
-    .min(1970, 'Minimum year 1970')
-    .max(2022, 'Max year 2022')
-    .required('Required'),
-  description: Yup.string().min(6, 'At least 6 symbols').max(200, 'Maximum 200 symbols').required('Required'),
-  ImageUrl: Yup.string().min(5, 'At least 5 symbols').max(50, 'Maximum 50 symbols').required('Required'),
+    .min(1970, <P>Min year 1970</P>)
+    .max(2022, <P>Max year 2022</P>)
+    .required(<P>Required</P>),
+  description: Yup.string().min(6, <P>At least 6 symbols</P>).max(200, <P>Maximum 200 symbols</P>).required(<P>Required</P>),
+  ImageUrl: Yup.string().min(5, <P>At least 5 symbols</P>).max(50, <P>Maximum 50 symbols</P>).required(<P>Required</P>),
 });
 
 const initialValues = {

@@ -27,14 +27,14 @@ const H2 = styled.h2`
 `;
 
 function LoginPage() {
-  const { isLoggedIn, user } = useAuthCtx();
+  const { isLoggedIn } = useAuthCtx();
   const navigate = useNavigate();
 
   const [signInWithEmailAndPassword, __, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
   function loginWithHooks({ email, password }) {
-    const rez = signInWithEmailAndPassword(email, password).then(() => {
+    signInWithEmailAndPassword(email, password).then(() => {
       navigate('/shops');
       toast.success('Login success');
     });
@@ -50,7 +50,7 @@ function LoginPage() {
           <>
             <Login onLogin={loginWithHooks} />
 
-            <H2>Don't have an account?</H2>
+            <H2>Do not have an account?</H2>
             <Link to={'/register'}>
               <Button>Register</Button>
             </Link>

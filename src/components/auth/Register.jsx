@@ -2,10 +2,16 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { Button, Label, Input } from '../ui/styled/Styles';
+import styled from 'styled-components';
+
+const P = styled.p`
+  color: red;
+  margin-bottom: 0;
+`
 
 const SignupSchema = Yup.object().shape({
-  password: Yup.string().min(6, 'Too Short!').required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().min(6, <P>Too short</P>).required(<P>Required</P>),
+  email: Yup.string().email(<P>Invalid email</P>).required(<P>Required</P>),
 });
 
 const Register = ({ onRegister }) => (
