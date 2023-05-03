@@ -1,8 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LI = styled.li`
+const H3 = styled.h3`
   list-style-type: none;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: #333;
+`;
+const H4 = styled.h4`
+  list-style-type: none;
+  font-weight: normal;
+  margin-bottom: 0;
   padding: 0.5rem;
   font-size: 2rem;
   color: #333;
@@ -26,13 +36,13 @@ const Image = styled.img`
 function SingleShop({ shop }) {
   return (
     <Card>
-      <LI>{shop.shopName}</LI>
-      <LI>{shop.town}</LI>
-      <LI>{shop.startYear}</LI>
-      <LI>{shop.description}</LI>
-      <LI>
+      <H3>{shop.shopName}</H3>
+      <H4>{shop.town}</H4>
+      <H4>{shop.startYear}</H4>
+      <H4>{shop.description}</H4>
+      <H4>
         <Image src={shop.ImageUrl} alt={shop.shopName} />
-      </LI>
+      </H4>
     </Card>
   );
 }

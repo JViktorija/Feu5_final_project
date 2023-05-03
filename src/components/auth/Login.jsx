@@ -30,7 +30,7 @@ function Login({ onLogin }) {
     <form onSubmit={formik.handleSubmit}>
       <div>
         <Label htmlFor="email">Email</Label>
-        <Input
+        <Input 
           id="email"
           type="text"
           name="email"
